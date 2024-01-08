@@ -1,0 +1,46 @@
+/* Por  tipo */
+h3 {
+    color: yellowgreen;
+}
+/* Por clase */
+.class-h2 {
+    color: red;
+}
+/* Por id */
+#id_element {
+    color: blue;
+}
+/* Por atributo */
+[por-atributo="valor"]{
+    color: green
+}
+/* Por manera descendente */
+h2 p {
+    color: aquamarine;
+}
+/* por pseudoclase de manera descendente*/
+.class-h2 :hover{
+    color: black;
+    /* cuando le paso el mouse encima */
+}
+/*
+Jerarquizacion de cambios ante modificaciones (Especificidad)
+
+----------------------------------------------
+!important
+---------------------------------------------
+estilos en linea (style en archivo html)
+---------------------------------------------
+identificadores
+---------------------------------------------
+clases
+pseudo-clases
+atributos
+---------------------------------------------
+elementos 
+pseudoelementos
+---------------------------------------------
+
+Ante misma jerarquia se aplica la caracteristica al final del documento
+Ante mayor jerarquia gana esa
+*/

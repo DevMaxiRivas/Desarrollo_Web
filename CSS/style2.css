@@ -1,0 +1,7 @@
+/* Metodologia bem */
+.contact-form__input:first-child {
+    color:blueviolet;
+}
+.contact-form__input--active   {
+    color: aqua;
+}
