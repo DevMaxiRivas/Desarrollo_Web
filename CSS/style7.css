@@ -1,0 +1,53 @@
+.texto{
+ padding: 20px;   
+}
+/* solo funciona en los elementos en block  */
+.texto::first-line{
+    color: blue;
+    font-size: 2em;
+}
+
+.texto::first-letter{
+    font-size: 4em;
+}
+
+/* caracteristicas para atributo placeholder de eti html */
+.form-nombre{
+    margin: 100px auto;
+    display: block;
+    background-color: aliceblue;
+    padding: 100px;
+    width: 50%;
+}
+
+input{
+    padding: 6px;
+    width: 100%;
+}
+
+input::placeholder{
+    color: blue;
+    font-style: italic;
+}
+
+/* caracteristicas para seleccion con el mouse */
+div::selection{
+    background: red;
+    color: yellow;
+}
+
+b{
+    padding: 200px;
+    font-size: 30px;
+}
+b::before{
+    content: "Hoy, yo ";
+    color: yellowgreen;
+}
+b::after{
+    content: " que aprender";
+    color: aqua;
+}
+
+
+/* texto no seleccionable, no forma parte del DOM */

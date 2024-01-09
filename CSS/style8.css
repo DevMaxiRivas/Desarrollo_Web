@@ -1,0 +1,69 @@
+* {
+    font-family: 'Salsa', cursive;
+    font-stretch: 10px;
+    font-size: 30px;
+}
+
+h2{
+    padding: 10px;
+}
+
+.caja1{
+    height: 200px;
+    width: 200px;
+    background: purple;
+}
+
+/* mouse sobre el elemento */
+.caja1:hover{
+    background: red;
+}
+
+.button1{
+    padding: 10px;
+    margin-left: 10px;
+    background-color: white;
+}
+
+.button1:hover{
+    background: black;
+    color: white;
+}
+
+/* link visitado */
+a{
+    /* color: aqua; */
+}
+a:link {
+    color: red;
+}
+a:visited{
+    color: violet;
+}
+
+/* active --> mantener presionado sobre el objeto con el mouse */
+
+.div_active{
+    width: 250px;
+    height: 250px;
+    background: red;
+    margin: 24px;
+    transition: all 1s;
+}
+
+.div_active:active{
+    background: blue;
+    width: 600px;
+}
+
+/* focus --> cuando se esta parado sobre ese objeto, utilizado en los inputs */
+.inp_foc{
+    margin: 29px;
+    background: lightblue;
+    transition: background .4s, padding .4s;
+}
+
+.inp_foc:focus{
+    background: white;
+    padding: 20px;
+}

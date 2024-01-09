@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas PAW</title>
+</head>
+<body>
+    <h1>Crear una Cuenta para PAW</h1>
+    <fieldset>
+        <legend>Datos de la Cuenta:</legend>
+        Nombre <input type="text" name="nombre" size="50">
+        <br><br>
+        Apellido <input type="text" name="apellido" size="50">
+        <br><br>
+        Cuenta Solicitada: <input type="text" name="correo">@paw.unsa.edu.ar
+        <br><br>
+        Password <input type="password" name="pswd" size="28">
+        <br><br>
+        <input type="radio" name="check" value="Hombre" checked>Hombre
+        <br>
+        <input type="radio" name="check" value="Mujer">Mujer
+        <br><br>
+        Fecha Nac. <input type="number" name="dia" size="12" min="1" max="31">
+        <select name="meses">
+            <option value="Enero" selected>Enero</option>
+            <option value="Febrero">Febrero</option>
+            <option value="Marzo">Marzo</option>
+            <option value="Abril">Abril</option>
+            <option value="Mayo">Mayo</option>
+            <option value="Junio">Junio</option>
+            <option value="Julio">Julio</option>
+            <option value="Agosto">Agosto</option>
+            <option value="Septiembre">Septiembre</option>
+            <option value="Octubre">Octubre</option>
+            <option value="Noviembre">Noviembre</option>
+            <option value="Diciembre">Diciembre</option>
+        </select>
+        <input type="number" name="anio" min="1980" size="12">
+        <br><br>
+        Comentario: <textarea name="Comentario" cols="30" rows="5"></textarea>
+        <br><br>
+        <input type="submit" value="Enviar"><input type="button" value="Cancelar">
+    </fieldset>
+    <br>
+    AutoCompletado y Seleccion
+    <form>
+        <input list="browsers">
+        <datalist id="browsers">
+            <option value="lnternet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+    </form>
+    <br><br>
+    
+</body>
+</html>

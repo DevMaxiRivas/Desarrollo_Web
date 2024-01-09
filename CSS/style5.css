@@ -1,0 +1,22 @@
+*{
+    font-family: sans-serif;
+    font-size: 40px;
+}
+/* no es responsive */
+body{
+    padding-top: 100px;
+}
+.caja-fixed{
+    background-color: red;
+    position: fixed;
+    opacity: .4;
+    margin: -100px;
+}
+
+.caja-sticky{
+    background-color: red;
+    position: sticky;
+    opacity: .4;
+    top: 0px;
+}
+

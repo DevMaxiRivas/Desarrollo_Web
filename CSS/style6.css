@@ -1,0 +1,81 @@
+*{
+    font-family: sans-serif;
+}
+/* FLOAT */
+.contenedor div{
+    width: 50%;
+    float: right;
+}
+
+.primario{
+    background: red;
+}
+
+.secundario{
+    background: yellow;
+}
+
+.cont{
+    margin: 100px auto;
+    width: 50%;
+    border: 5px solid grey;
+    padding: 10px;
+}
+
+.cont img{
+    float: right;
+    width: 200px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+
+
+/* OVERFLOW */
+.div-overflow{
+    margin: 50PX auto;
+    width: 320px;
+    height: 350px;
+    border: 4px solid red;
+    background: gray;
+    /* para que se pueda hacer scroll sobre la caja */
+    overflow: auto;
+    /* para que se quede fijo y no aparezca barra de scroll */
+    /* overflow: hidden; */
+}
+/* a los elementos que son nativos inline no se puede definir la medida  */
+b{
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+    border: 10px solid red;
+    background: yellow;
+
+}
+/* pero si lo podemos hacer si modificamos la propiedad display */
+b{
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+    border: 10px solid red;
+    background: yellow;
+    display: inline-block;
+
+}
+
+/* recorte utilizando la caja */
+ #caja-img{
+    margin: 50PX auto;
+    width: 320px;
+    height: 350px;
+    border: 4px solid red;
+    background: gray;
+    /* para que se quede fijo y no aparezca barra de scroll */
+    overflow: hidden;
+ }
+ #moris-img{
+    width: 300px;
+    position: relative;
+    top: 50px;
+    left: 49px;
+ }
