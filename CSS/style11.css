@@ -1,0 +1,44 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-stretch: 10px;
+    font-size: 30px;
+}
+
+/* flex-wrap adaptar el contenido al ancho del contenedor */
+.flex-container{
+    display: flex;
+    flex-wrap: wrap
+}
+
+.flex-item{
+    background: #248;
+    color: #FFF;
+    margin: 10px;
+    height: 120px;
+    min-width: 120px;
+    text-align: center;
+}
+
+.orange{
+    background: orange;
+}
+
+.green{
+    background: green;
+}
+
+/* justify-content centrar los elementos de un contenedor */
+.flex-container-just{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* align */
+.flex-container-align{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 100vh;
+    align-content: flex-start;
+}
