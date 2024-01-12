@@ -1,0 +1,33 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-stretch: 10px;
+    font-size: 20px;
+}
+.div-reponsive {
+    background: #c95;
+}
+
+@media screen and (min-width: 400px) and (max-width: 650px) {
+    .div-reponsive {
+        background: red;
+        padding: 10px;
+    }
+}
+@media screen and (min-width: 650px) and (max-width: 800px) {
+    .div-reponsive {
+        background: green;
+        font-size: 50px;
+    }
+}
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+    .div-reponsive {
+        background: orange;
+        margin: 50px;
+    }
+}
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+    .div-reponsive {
+        background: #000;
+        color: #fff;
+    }
+}
