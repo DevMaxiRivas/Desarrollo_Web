@@ -1,0 +1,29 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+/* definimos variable de manera global --identificador*/
+:root {
+    --color-rojo-claro: #f44;
+    --color-azul-claro: #66f;
+}
+div {
+    padding: 30px;
+    height: 150px;
+    width: 150px;
+    margin: 30px;
+}
+/* definimos variables localmente para todos los elementos del tipo p */
+p{
+    --color-azul-claro: #000;
+    height: 100px;
+    width: 100px;
+    margin: 30px;
+    background-color: var(--color-azul-claro);
+}
+.container {
+    background-color: var(--color-rojo-claro);
+}
+.container-2 {
+    background-color: var(--color-azul-claro);
+}

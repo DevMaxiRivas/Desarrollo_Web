@@ -1,0 +1,45 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+.container {
+    background: #80f;
+    padding: 30px 5px;
+}
+.caja {
+    background: #025;
+    height: 80px;
+    width: 80px;
+    /* mucho consumo de los recursos */
+    /* transition-property: all; */
+    transition-property: left, background;
+    transition-duration: 1s, 3s;
+    /* transition-delay: 1s; */
+    margin: 30px;
+
+    /* las cajas que heredan de este contenedor heredan las propiedades del mismo */
+    /* background: inherit;
+    border: 1px solid #000; */
+    position: relative;
+    left: 0;
+}
+.container:hover > .caja{
+    left: 80%;
+    background: #fff;
+}
+
+.caja:first-child{
+    transition-timing-function: linear;
+}
+.caja:nth-child(2) {
+    transition-timing-function: easa;
+}
+.caja:nth-child(3) {
+    transition-timing-function: ease-in;
+}
+.caja:nth-child(4) {
+    transition-timing-function: ease-in-out;
+}
+.caja:nth-child(5) {
+    transition-timing-function: ease-out;
+}
