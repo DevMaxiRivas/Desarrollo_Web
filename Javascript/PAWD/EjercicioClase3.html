@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <P id="sec">Desarrollo PAW</P>
+    <ul id="items">
+        <li>HTML Básico</li>
+    </ul>
+    <input type="text">
+    <button onclick="miFuncion2()">Probar!</button>
+
+    <script type="text/javascript">
+        function miFuncion(){
+            let parrafo, contenido;
+            parrafo = document.createElement("p");
+            contenido = document.createTextNode("Texto Nuevo");
+            parrafo.appendChild(contenido);
+            document.body.appendChild(parrafo);
+
+            // Modificar la página HTML para que 
+            // contenga una caja de texto. Cuando se 
+            // hace click en el botón se elimina el 
+            // elemento con ese id (si existe)
+
+            let link = document.createElement("a");
+            link.appendChild(document.createTextNode("UNSa"));
+            link.href = "http://di.unsa.edu.ar";
+            document.body.appendChild(link);
+            
+            let item = document.createElement("li");
+            item.appendChild(document.createTextNode("Nuevo Item"));
+            document.getElementById("items").appendChild(item);
+        }
+        function miFuncion2(){
+            let parrafo = document.getElementById("sec");
+            parrafo.parentElement.removeChild(parrafo);
+            
+            // Modificar la página HTML para que 
+            // contenga una caja de texto. Cuando se 
+            // hace click en el botón se elimina el 
+            // elemento con ese id (si existe)
+            
+            const textBox = document.getElementsByTagName("input")[0];
+            let elemento = document.getElementById(textBox.value);
+            if(elemento != null )
+                document.body.removeChild(elemento);
+            else 
+                console.log("No se encontro el id del elemento que se quiere eliminar");
+        }
+    </script>
+</body>
+</html>

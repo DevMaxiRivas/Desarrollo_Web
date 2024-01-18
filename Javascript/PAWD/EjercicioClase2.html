@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> 
+        JavaScript (abreviado comúnmente <a href="http://prueba"> JS </a>) es un lenguaje de programación 
+        interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, 3 basado en prototipos, 
+        imperativo, débilmente tipado y dinámico.Se utiliza principalmente en su forma del lado del cliente 
+        (client-side), implementado como parte de un navegador web permitiendo mejoras en la interfaz de usuario y 
+        páginas web dinámicas aunque existe una forma de JavaScript del lado del servidor (Server-side JavaScript o 
+        <a href="http://prueba2">F SSJS </a>). Su uso en aplicaciones externas a la web, por ejemplo en documentos 
+        PDF, aplicaciones de escritorio (mayoritariamente widgets) es también significativo. 
+    </p>
+    <p>
+        JavaScript se diseñó con una sintaxis similar a <a href="http://prueba"> C </a>, aunque adopta nombres y 
+        convenciones del lenguaje de programación Java. Sin embargo, Java y JavaScript tienen semánticas y propósitos 
+        diferentes. Todos los navegadores modernos interpretan el código JavaScript integrado en las páginas web. 
+        Para interactuar con una página web se provee al lenguaje JavaScript de una implementación del Document 
+        Object Model (<a href="http://prueba3"> DOM </a>). </p>
+    <p>
+        Tradicionalmente se venía utilizando en páginas web <a class="thirdParagraph" href="http://prueba"> HTML</a> para realizar 
+        operaciones y únicamente en el marco de la aplicación cliente, sin acceso a funciones del servidor. 
+        Actualmente es ampliamente utilizado para enviar y recibir información del servidor junto con ayuda de otras 
+        tecnologías como <a class="thirdParagraph" href="http://prueba4"> AJAX </a>. JavaScript se interpreta en el agente de usuario al 
+        mismo <a class="thirdParagraph" href="http://prueba5">tiempo </a> que las sentencias van descargandose junto con el código HTML. 
+    </p>
+    <script>
+        let dirLastLink;
+        let qtyPointerTo = 0;
+        const paragraphs = document.getElementsByTagName("p");
+        const links = document.getElementsByTagName("a");
+        const linksThirdParagraph = document.getElementsByClassName("thirdParagraph");
+
+        dirLastLink = links[links.length - 2];
+        for(const link of links){
+            if (link.href.trim() == "http://prueba/")
+                qtyPointerTo++;
+        }
+
+        const thirdthParagraph = paragraphs[2];
+
+        console.log("La cantidad de parrafos en el documento es de " + paragraphs.length);
+        console.log("La cantidad de enlaces en el documento es de " + links.length);
+        console.log("Direccion a la que enlaza el penultimo enlace " + dirLastLink.href);
+        console.log( `La cantidad de enlaces en el documento que apuntan a http://prueba es de ` + qtyPointerTo);
+        console.log("La cantidad de enlaces en el tercer parrafo del documento es de " + linksThirdParagraph.length);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset style="width: 330px; font-family: arial;">
+    <legend>Contador</legend>
+    <form name="formulario">
+        <label>Ingrese oracion:</label>
+        <input type="text" name="oracion" style="width: 95%;">
+        <input type="button" onclick="miFuncion(formulario.oracion.value)" value="Aceptar"><br>
+        <label>Cantidad de Caracteres:</label>
+        <input class=cantidad-caracteres type="text" style="width: 95%;" disabled>
+    </form>
+    </fieldset>
+
+    <script>
+        function miFuncion(valor){
+            const input = document.querySelector(".cantidad-caracteres");
+            input.value = `${valor.length}`;
+        }
+    </script>
+</body>
+</html>

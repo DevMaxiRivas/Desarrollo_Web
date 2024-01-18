@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checbox Items</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Cargar Items en el Checbox</legend>
+        <form name="formulario">
+            <label>Ingrese Items</label>
+            <input type="text" name="valores" style="width: 100%;">
+            <small>Separados por espacios</small><br>
+            <input type="button" value="Aceptar" onclick="miFuncion()">
+            <br><br>
+            items sin repetir: <br>
+            <div id="elcheckbox"></div>
+        </form>
+    </fieldset>
+
+    <script>
+        function miFuncion(){
+
+            // Depure la cadena y construya un arreglo dejando solo palabras sin repetir.
+
+            const input = document.getElementsByName("valores")[0];
+            let text = input.value;
+            let arreglo = text.split(' ');
+
+            // Usando DOM agregue a la página html un elemento <INPUT TYPE=”checkbox”> 
+            // cuyos ítems son las palabras sin repetir del inciso anterior, ordenados 
+            // alfabéticamente.
+
+            let nvoArreglo = [];
+            
+            arreglo.forEach(elemento => {
+                if(!nvoArreglo.includes(elemento))   
+                    nvoArreglo.push(elemento);
+            });
+            nvoArreglo.sort();
+
+            let inputs, lavels;
+            const div = document.getElementById("elcheckbox");
+            nvoArreglo.forEach(elemento => {
+                inputs = document.createElement("input");
+                inputs.type = "checkbox";
+                inputs.value = elemento;
+
+                lavels = document.createElement("lavel");
+                lavels.appendChild(document.createTextNode(elemento));
+                
+                div.appendChild(inputs);
+                div.appendChild(lavels);
+                div.appendChild(document.createElement("br"));
+            });
+
+            // Agregar un nuevo botón para eliminar un checkbox con atributo id que coincide 
+            // con un campo input de tipo texto.
+
+            const nvoLavel = document.createElement("lavel");
+            nvoLavel.appendChild(document.createTextNode("Ingrese Id"));
+            const nvoInput = document.createElement("input");
+            nvoInput.type = "text";
+            nvoInput.id = "deleteCheckbox";
+            const nvoBoton = document.createElement("input");
+            nvoBoton.type = "button";
+            nvoBoton.value = "Elimina Checkbox";
+            nvoBoton.onclick= eliminaCheckbox;
+            div.appendChild(nvoLavel);
+            div.appendChild(document.createElement("br"));
+            div.appendChild(nvoInput);
+            div.appendChild(nvoBoton);
+
+        }
+        function eliminaCheckbox(){
+            const div = document.getElementById("elcheckbox");
+            const input = document.getElementById("deleteCheckbox");
+            
+            // valor para obtener a todos los nodos del elemento
+            const elementos = div.getElementsByTagName("*");
+            value = input.value;
+            console.log(value);
+            let indice;
+            for(indice = 0; indice < elementos.length-2; indice++){
+                if(elementos[indice].value == value)
+                    break;
+            }
+            if(indice < elementos.length - 2){
+                for(let i=1; i<=3; i++){
+                    elementos[indice].parentElement.removeChild(elementos[indice]);
+                }
+            }
+            console.log("Ejecuto");
+        }
+    </script>
+</body>
+</html>
