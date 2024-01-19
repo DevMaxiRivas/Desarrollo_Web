@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Nombre</label>
+    <input type="text" placeholder="Ingrese un Nombre" id="input" >
+    <input type="submit" value="Enviar" onclick="miFuncion()">
+
+    <script>
+    // Arbol HTML - DOM
+    // Ejercicio: 
+    // Un cuadro de texto para ingresar un nombre.
+    // Un párrafo para mostrar un saludo al nombre ingresado.
+
+        function miFuncion(){
+            const input = document.getElementById("input");
+            let nombre = input.value;
+            document.body.innerHTML = document.body.innerHTML + `<p> Hola ${nombre}!</p>`;
+        }
+    </script>
+</body>
+</html>

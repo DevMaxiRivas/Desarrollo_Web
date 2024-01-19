@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Armar un formulario que contenga:
+    ● Campo (sólo lectura) que cargue automáticamente la fecha 
+    actual.
+    ● Desplegable que solicite ingresar texto en el caso de que 
+    se elija una de las opciones existentes.
+    ● Desplegables relacionados
+    ● Selección que habilita un botón -->
+
+    <form id="formulario">
+        <!-- fecha -->
+        <label style="margin-right: 4px;">Fecha Actual:</label>
+        <input type="date" id="fechaActual" disabled>
+        <br>
+        <br>
+
+        <!-- seleccion -->
+        <label for="seleccion">Seleccion1</label>
+        <select id="seleccion" onchange="mostrarTextoDesplegable()">
+            <option value="Opcion1">Opcion1</option>
+            <option value="Opcion2">Opcion2</option>
+            <option value="Texto" >IngresarTexto</option>
+        </select>
+
+        <!-- campo texto oculto -->
+        <div style="display: none;" id="campoTexto">
+            <label for="texto">Ingrese Texto </label>
+            <input type="text" placeholder="Texto">
+        </div>
+
+        <br>
+        <br>
+
+        <label for="seleccion-2">Seleccion2</label>
+        <select id="seleccion-2" onchange="mostrarSeleccion()">
+            <option value="Seleccionar">Seleccionar Una Opcion</option>
+            <option value="Opcion1">Opcion1</option>
+            <option value="Opcion2">Opcion2</option>
+        </select>
+
+
+        <div id="desplegable-op1" style="display: none;">
+            <label> Seleccion Opcion 1</label>
+            <select>
+                <option value="OpcionA">OpcionA</option>
+                <option value="OpcionB">OpcionB</option>
+            </select>
+        </div>
+        
+        <div id="desplegable-op2" style="display: none;">
+            <label>Seleccion Opcion 2</label>
+            <select>
+                <option value="OpcionC">OpcionC</option>
+                <option value="OpcionD">OpcionD</option>
+            </select>
+        </div>
+        <br>
+        <br>
+        
+        <!-- checkbox para boton -->
+        <label for="checkbox">Habilitar el Boton</label>
+        <input type="checkbox" id="checkbox" onchange="habilitarBoton()">
+        <br>
+        <input type="submit" value="Enviar" id="boton" disabled>
+
+    </form>
+    
+    
+    <script>
+    let fechaActual = new Date();
+    let ano = fechaActual.getUTCFullYear();
+    let mes = fechaActual.getUTCMonth() + 1;
+    let dia = fechaActual.getUTCDate();
+
+    if (mes < 10) mes = "0" + mes;
+    if (dia < 10) dia = "0" + dia;
+    
+    let fechaFormateada = `${ano}-${mes}-${dia}`;
+    console.log(fechaFormateada)
+    
+    const fecha = document.getElementById("fechaActual");
+    fecha.value = fechaFormateada;
+    
+    function mostrarTextoDesplegable(){
+        const seleccion = document.getElementById("seleccion");
+        if(seleccion.value === "Texto") {
+            document.getElementById("campoTexto").style = "display: block;"
+        }
+    }
+
+    function mostrarSeleccion(){
+        const seleccion = document.getElementById("seleccion-2");
+        switch(seleccion.value){
+            case "Opcion1":
+                document.getElementById("desplegable-op1").style = "display: block;";
+                document.getElementById("desplegable-op2").style = "display: none;";
+            break;
+            case "Opcion2":
+                document.getElementById("desplegable-op1").style = "display: none;";
+                document.getElementById("desplegable-op2").style = "display: block;";   
+            break;
+        default:
+            document.getElementById("desplegable-op1").style = "display: none;";
+            document.getElementById("desplegable-op2").style = "display: none;";   
+        }
+    }
+
+    function habilitarBoton(){
+        const checkbox = document.getElementById("checkbox");
+        console.log(checkbox.checked)
+        if(checkbox.checked){
+            boton.disabled = false;
+        }
+        else{
+            boton.disabled = true;
+        }
+    }
+
+
+    </script>
+</body>
+</html>
