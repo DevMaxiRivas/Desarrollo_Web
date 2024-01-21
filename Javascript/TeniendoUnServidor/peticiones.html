@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ir a consola para ver opciones para usar metodos
+        post y get
+    </h1>
+    <p style="margin: 10px;">Segunda parte Usando <b>await</b> y <b>async</b></p>
+    <button id="nombre" style="margin: 10px; font-size: 30px;">
+        Obtener Nombres
+    </button>
+    <div class="resultado"></div>
+    <!-- Libreria Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script>
+        let peticion;
+
+        // en caso de que quieramos que funcione para el
+        // navegador internet explorer
+
+        if(window.XMLHttpRequest) 
+            peticion = new XMLHttpRequest();
+        else
+            new ActiveXObject("Microsoft.XMLHTTP");
+
+        // METODO GET
+        // peticion.addEventListener("load", () => {
+        //     let respuesta;
+        //      //Codigo para notificar que se recibio respuesta de la solicitud
+        //     if(peticion.status == 200 || peticion.status == 201)
+        //         respuesta = peticion.response;
+        //     else
+        //         respuesta = "Lo siento no se ha encontrado el recurso";
+            
+        //     console.log(JSON.parse(respuesta));
+        // });
+
+        // peticion.open("GET","informacion.txt");
+        // peticion.send();
+
+        
+        // METODO POST
+        peticion.addEventListener("load", () => {
+            let respuesta;
+             //Codigo para notificar que se recibio respuesta de la solicitud
+            if(peticion.status == 200 || peticion.status == 201)
+                respuesta = peticion.response;
+            else
+                respuesta = "Lo siento no se ha encontrado el recurso";
+            
+            console.log("GET con XMLHTTPRequest");
+            console.log(JSON.parse(respuesta));
+        });
+
+        // Creacion de la solicitud POST al sitio
+        peticion.open("POST","https://reqres.in/api/users");
+        // Le decimos al interpret que vamos a recibir un JSON
+        peticion.setRequestHeader("Content-type","application/json;charset=UTF8");
+        // envio de json
+        peticion.send(JSON.stringify({
+            "nombre" : "maxi",
+            "trabajo" : "programador"
+        }));
+
+        // METODO GET USANDO FETCH 
+        // Devuelve una promesa que contiene otra promesa con los datos
+        let promesa1 = fetch("https://reqres.in/api/unknown/2");
+        // Obtemos el valor de la promesa que devolvio fecht como string
+        promesa1.then(valorPromesa1 => valorPromesa1.text())
+            .then(res => {
+                console.log("GET con Fech");
+                console.log(JSON.parse(res));
+            })
+
+
+        // Metodo POST usando FECH
+
+        fetch("https://reqres.in/api/users",{
+            method : "POST",
+            body : JSON.stringify({
+                "nombre" : " Maxi",
+                "apellido" : "Rivas"
+            }),
+            headers : {
+                "Content-type" :"application/json"
+            }
+        })
+            .then(res => res.json()) // en ves de convertirlo a texto lo obtenemos directamente el json
+                .then(res => {
+                    console.log("Post con Fech");
+                    console.log(res);
+                });
+        
+        // Metodo GET usando la libreria AXIOS
+        // <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"><script>
+        axios("informacion.txt")
+            .then(res => {
+                console.log("GET Con Axios");
+                console.log(res.data);
+            });
+            
+            // Metodo POST usando la libreria AXIOS
+            
+            axios.post("https://reqres.in/api/users",{
+                "nombre" : "maxi"
+            }).then(res => {
+                console.log("POST Con Axios");
+                console.log(res)
+            });
+
+            // Segunda parte Usando await y async
+            const getName = async () => {
+            let peticion1 = await fetch("informacion.txt");
+            let resultado = await peticion1.json();
+            let HTMLCode = `Nombre: ${resultado.nombre} <br>
+                            Edad : ${resultado.edad}`;
+            document.querySelector(".resultado").innerHTML = HTMLCode;
+            }
+
+            document.getElementById('nombre').addEventListener("click",getName);
+            
+    </script>
+</body>
+</html>

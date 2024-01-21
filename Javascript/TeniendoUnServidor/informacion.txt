@@ -1,0 +1,4 @@
+{
+    "nombre" : "maxi Rivas",
+    "edad" : 24
+}

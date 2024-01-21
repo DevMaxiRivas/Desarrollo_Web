@@ -42,6 +42,10 @@
 
             let inputs, lavels;
             const div = document.getElementById("elcheckbox");
+            // esto esta poco optimizado en cada iteracion del bucle for forEach
+            // se esta reconstruyendo el DOM en vez de usar appendChild se deberia
+            // usar a una variable DocumentFragment para aplicarle el appenChild
+
             nvoArreglo.forEach(elemento => {
                 inputs = document.createElement("input");
                 inputs.type = "checkbox";
