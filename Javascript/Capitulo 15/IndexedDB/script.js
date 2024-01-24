@@ -8,22 +8,24 @@ IDBRequest.addEventListener("upgradeneeded", ()=>{
     });
 });
 IDBRequest.addEventListener("success", ()=>{
-    console.log("todo salio correctamente");
+    leerObjetos();
 });
 IDBRequest.addEventListener("error", ()=>{
     console.log("ocurrio un error a abrir la db");
 });
 
 document.getElementById("add").addEventListener("click",()=>{
-    let nombreIngresado = document.getElementById("nombre").value;
-    if(nombreIngresado.length > 0){
+    let nombreIngresado = document.getElementById("nombre");
+    if(nombreIngresado.value.length > 0){
         if(document.querySelector(".posible") != undefined){
             if(confirm("Hay elementos sin guardar: Quieres continuar?")){
-                addObjetos({nombre : nombreIngresado});
+                addObjetos({nombre : nombreIngresado.value});
+                nombre.value = "";
                 leerObjetos();
             }
         } else {
-            addObjetos({nombre : nombreIngresado});
+            addObjetos({nombre : nombreIngresado.value});
+            nombre.value = "";
             leerObjetos();
         }
     }
