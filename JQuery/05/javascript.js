@@ -19,6 +19,15 @@ $(document).ready(function(){
         e.preventDefault();
         $('img').toggleClass('d-none');
     });
+
+
+    // A partir de aqui lo que se hace es establecer
+    // un input que muuestra un SPAN diciendo Hola + "valor del input"
+    
+    // Al momento de nombrar vbles UI hace referencia a elemento
+    // de interfaz grafica
+    // Si vamos a aplicarle varios eventos al mismo elemento es
+    // optim (menos uso del procesador) guardarlo en una variable
     let textoUI=$('#texto');
     textoUI.keyup(function (e) { 
         e.preventDefault();
