@@ -35,12 +35,15 @@ $(document).ready(function () {
             }
         });
     });
+
+    // Esto se utiliza asi porque los elementos creados con js no los detecta de igual que los
+    // elementos ya definidos en el documento html
     $(document).on('click','.fa-pencil-square-o',function(){
         //console.log($(this).data('id'));
         $('#crearEmpleado').addClass('d-none');
         $('#editarEmpleado').removeClass('d-none');
         $('#datos-tab').html('Editar');
-        $('#datos-tab').click();
+        $('#datos-tab').click();    // Cn esto se simula que se hace un click automatico
         $('#nombre').val($(this).data('nombre'));
         $('#puesto').val($(this).data('puesto'));
         $('#edad').val($(this).data('edad'));

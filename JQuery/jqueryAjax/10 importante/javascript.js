@@ -6,7 +6,7 @@ $(document).ready(function () {
         $.post("http://localhost/ajax/convertir.php", 
         {'nombre':nombre,'puesto':puesto},
             function (data, textStatus, jqXHR) {
-                $('#res').parent().removeClass('d-none');
+                $('#res').parent().removeClass('d-none');   // Con parent accedemos al padre del elemento con id res
                 $('#res').html(data);
             }
         ).done(function(){
