@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $("#leer").click(function (e) { 
         e.preventDefault();
-        $.get("archivo.txt",function(data,textStatus,jqXHR){
+        $.get("archivo.txt",function(data,textStatus,jqXHR){    // Peticion get que obtiene el contenido de la URI que mandamos de la funcion 
             console.log(data);
             //console.log(textStatus);
             //console.log(jqXHR);
@@ -24,9 +24,9 @@ $(document).ready(function () {
         $.get("empleados.json",function(data){
             //console.log(data);
             $.each(data, function (index, item) { 
-                 $('#listaEmpleados').html($('#listaEmpleados').html()+`
-                 <li> ${item.nombre} -- ${item.puesto} </li>
-                 `);
+                $('#listaEmpleados').html($('#listaEmpleados').html()+`
+                <li> ${item.nombre} -- ${item.puesto} </li>
+                `);
             });
         });
     });
