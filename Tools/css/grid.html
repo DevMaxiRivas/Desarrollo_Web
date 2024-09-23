@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Básico</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual ancho */
+            gap: 20px; /* Espacio entre los elementos */
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .grid-item {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+        <div class="grid-item">Item 4</div>
+        <div class="grid-item">Item 5</div>
+        <div class="grid-item">Item 6</div>
+    </div>
+</body>
+</html>
