@@ -1,0 +1,26 @@
+// Datos que vamos a enviar
+const datos = {
+    nombre: "Juan",
+    email: "juan@ejemplo.com"
+};
+
+// Petición POST con cuerpo JSON
+fetch('https://ejemplo.com/api/enviar', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json' // Especificar que estamos enviando JSON
+    },
+    body: JSON.stringify(datos) // Convertir el objeto de datos a JSON
+})
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error en la respuesta del servidor');
+        }
+        return response.json(); // Obtener la respuesta JSON
+    })
+    .then(data => {
+        console.log('Respuesta del servidor:', data); // Manejar los datos de respuesta
+    })
+    .catch(error => {
+        console.error('Hubo un problema con la petición:', error);
+    });
